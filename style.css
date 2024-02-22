@@ -1,3 +1,4 @@
+
 *{
     padding: 0;
     margin: 0;
@@ -6,19 +7,50 @@
 
 body{
     background-color: gray;
+    color: #fff;
 }
 
-.container{
-   display: flex;
-   justify-content: center;
+.wrapper{
+
+    width: 90%;
+    max-width: 470px;
+    background-color: rgba(135, 206, 250, 0.493);
+    margin: 50px auto;
+    padding: 40px 35px;
+    text-align: center;
+    border-radius: 20px;
 }
 
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    gap: 10px;
+}
 
-input{
-    padding: 8px 70px;
-    margin-top: 50px;
-    border-radius: 5px;
-    border-style: none;
-    
-    
+.search input{
+    height: 40px;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    border-radius: 30px;
+    flex: 1;
+    font-size: 15px;
+   background-color: whitesmoke;
+  
+}
+
+.search button{
+    border: 0;
+    outline: 0;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.search button img{
+    width: 14px;
 }
