@@ -5,19 +5,22 @@
 // }
 
 const apiKey ="76bcab4ba4a0893b31771ad4ff501843";
-const apiUrl ="https://api.openweathermap.org/data/2.5/weather?&units=metric&q=istanbul";
+const apiUrl ="https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+
+const inp = document.querySelector("input");
+const btn = document.querySelector("button");
 
 
 
-async function getWeather(){
+async function getWeather(city){
 
-    const response = await fetch (apiUrl + `&appid=${apiKey}`);
+    const response = await fetch (apiUrl + city + `&appid=${apiKey}`);
     var data = await response.json();
 
     console.log(data);
 
-    const city = document.querySelector(".city");
-    city.innerHTML = data.name;
+    const loc = document.querySelector(".city");
+    loc.innerHTML = data.name;
 
     const temperature = document.querySelector(".temp");
     temperature.innerHTML = Math.round(data.main.temp) + "°c";
@@ -29,8 +32,8 @@ async function getWeather(){
     wind.innerHTML = data.wind.speed + "km/h";
 }
 
+btn.addEventListener('click', () => {
 
+    getWeather(inp.value);
 
-    getWeather();
-
-
+})
