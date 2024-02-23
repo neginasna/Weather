@@ -55,7 +55,7 @@ async function getWeather(city) {
         const weather = document.querySelector(".weather")
         weather.style.display = "block";
 
-       document.querySelector(".error").style.display = "none";
+        document.querySelector(".error").style.display = "none";
     }
 
 }
