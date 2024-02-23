@@ -56,6 +56,11 @@ body{
     width: 14px;
 }
 
+.search button:hover{
+  background-color: rgb(243, 217, 222);
+
+}
+
 .weather-icone{
     width: 170px;
     margin-top: 30px;
@@ -79,13 +84,13 @@ body{
     margin-top: 45px;
 }
 
-.col{
+.wrapp{
     display: flex;
     align-items: center;
     text-align: left;
 }
 
-.col img{
+.wrapp img{
     width: 35px;
     margin-right: 10px;
 }
