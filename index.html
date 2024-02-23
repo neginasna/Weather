@@ -12,7 +12,7 @@
 <body>
 
     <div class="wrapper">
-        <div class="search">
+        <div class="search flex align-center">
             <input type="text" placeholder="Enter City Name">
             <button><img src="./images/search.png"></button>
         </div>
@@ -22,18 +22,26 @@
         </div>
 
         <div class="weather">
-            <img src="./images/rain.png" class="weather-icone">
-            <h1 class="temp"></h1>
-            <h2 class="city"></h2>
-            <div class="details">
-                <div class="wrapp">
+            <div class="city-date-infos">
+                <h2 class="city"></h2>
+                <p class="date">7 Jan 2024</p>
+            </div>
+            <div class="temp-infos">
+                <div class="description">
+                    <img src="./images/rain.png" class="weather-icone align-center">
+                    <span class="descrip">Sunny</span>
+                </div>
+                <h1 class="temp"></h1>
+            </div>
+            <div class="details flex align-center">
+                <div class="wrapp flex align-center">
                     <img src="./images/humidity.png" alt="">
                     <div>
                         <p class="humidity"></p>
                         <p>Humidity</p>
                     </div>
                 </div>
-                <div class="wrapp">
+                <div class="wrapp flex align-center">
                     <img src="./images/wind.png" alt="">
                     <div>
                         <p class="wind"></p>
