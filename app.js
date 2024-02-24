@@ -6,6 +6,7 @@ const inp = document.querySelector("input");
 const btn = document.querySelector("button");
 const weatherIcone = document.querySelector(".weather-icone");
 const description = document.querySelector(".descrip");
+const date = document.querySelector(".date");
 
 
 async function getWeather(city) {
@@ -36,6 +37,9 @@ async function getWeather(city) {
 
         const feel = document.querySelector(".feel-like");
         feel.innerHTML = Math.round(data.main.feels_like) + "°";
+
+        const currentDate = new Date ();
+        date.innerText = currentDate.toDateString();
 
 
         if (data.weather[0].main == "Clouds") {
