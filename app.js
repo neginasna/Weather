@@ -32,7 +32,10 @@ async function getWeather(city) {
         humidity.innerHTML = data.main.humidity + "%";
 
         const wind = document.querySelector(".wind");
-        wind.innerHTML = data.wind.speed + "km/h";
+        wind.innerHTML = data.wind.speed + " km/h";
+
+        const feel = document.querySelector(".feel-like");
+        feel.innerHTML = Math.round(data.main.feels_like) + "°";
 
 
         if (data.weather[0].main == "Clouds") {
