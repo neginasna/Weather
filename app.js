@@ -41,6 +41,9 @@ async function getWeather(city) {
         const currentDate = new Date ();
         date.innerText = currentDate.toDateString();
 
+        const hours = currentDate.getHours();
+        console.log(hours)
+
 
         if (data.weather[0].main == "Clouds") {
 
