@@ -7,6 +7,7 @@ const btn = document.querySelector("button");
 const weatherIcone = document.querySelector(".weather-icone");
 const description = document.querySelector(".descrip");
 const date = document.querySelector(".date");
+const wrapp = document.querySelector(".wrapper");
 
 
 async function getWeather(city) {
@@ -18,9 +19,12 @@ async function getWeather(city) {
 
     if (response.status == 404) {
         const error = document.querySelector(".error");
+        const imgerror = document.querySelector(".img-error");
         error.style.display = "block"
+        imgerror.style.display = "block"
 
         document.querySelector(".weather").style.display = "none";
+        
     } else {
 
         const location = document.querySelector(".city");
@@ -38,40 +42,58 @@ async function getWeather(city) {
         const feel = document.querySelector(".feel-like");
         feel.innerHTML = Math.round(data.main.feels_like) + "°";
 
-        const currentDate = new Date ();
-        date.innerText = currentDate.toDateString();
-
+        const currentDate = new Date();
+        date.innerText = currentDate.toDateString()
         const hours = currentDate.getHours();
         console.log(hours)
 
 
-        if (data.weather[0].main == "Clouds") {
 
-            weatherIcone.src = `images/clouds.png`
-            description.innerText = 'Partly Cloudy'
+        if (hours > 17 || hours <= 6 && data.weather[0].main == "Clouds") {
+            weatherIcone.src = `images/moon-cloud.png`;
+            description.innerText = 'Partly Cloudy';
+        } else if (hours <= 17 && data.weather[0].main == "Clouds") {
+            weatherIcone.src = `images/clouds.png`;
+            description.innerText = 'Partly Cloudy';
         }
-        else if (data.weather[0].main == "Clear") {
-            weatherIcone.src = `images/clear.png`
-            description.innerText = 'Clear'
+        
+         if (hours > 17 || hours <= 6 && data.weather[0].main == "Clear") {
+            weatherIcone.src = `images/clear-weather.png`;
+            description.innerText = 'Clear';
+        } else if (hours <= 17 && data.weather[0].main == "Clear") {
+            weatherIcone.src = `images/clear.png`;
+            description.innerText = 'Clear';
         }
-        else if (data.weather[0].main == "Rain") {
-            weatherIcone.src = `images/rain.png`
-            description.innerText = 'Rainy'
+
+        if (data.weather[0].main == "Rain") {
+            weatherIcone.src = `images/rainy-night.png`;
+            description.innerText = 'Rainy';
+        } else if (hours <= 17 && data.weather[0].main == "Rain"){
+            weatherIcone.src = `images/rainy-day.png`;
+            description.innerText = 'Rainy';
         }
-        else if (data.weather[0].main == "Snow") {
-            weatherIcone.src = `images/snow.png`
-            description.innerText = 'Snowy'
+
+        if (data.weather[0].main == "Snow") {
+            weatherIcone.src = `images/snow.png`;
+            description.innerText = 'Snowy';
         }
         else if (data.weather[0].main == "Drizzle") {
-            weatherIcone.src = `images/drizzle.png`
-            description.innerText = 'Drizzle'
+            weatherIcone.src = `images/drizzle.png`;
+            description.innerText = 'Drizzle';
         }
         else if (data.weather[0].main == "Mist") {
-            weatherIcone.src = `images/mist.png`
-            description.innerText = 'Mist'
+            weatherIcone.src = `images/fog-weather.png`;
+            description.innerText = 'Mist';
         }
 
-        const weather = document.querySelector(".weather")
+
+        if(hours > 17 || hours <= 6){
+            wrapp.style.background = "rgb(76, 76, 116)";
+        } else {
+            wrapp.style.background = "rgba(135, 206, 250, 0.493)";
+        }
+
+        const weather = document.querySelector(".weather");
         weather.style.display = "block";
 
         document.querySelector(".error").style.display = "none";

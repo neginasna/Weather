@@ -92,11 +92,10 @@ body {
 }
 
 .weather-icone {
-    width: 150px;
+    width: 120px;
 }
 
 .description span {
-   margin-top: -20px;
    font-size: 14px;
 }
 
@@ -136,13 +135,18 @@ body {
     margin-top: -6px;
 }
 
-
 .weather {
     display: none;
 }
 
 .error {
-    margin-top: 10px;
+    margin: 30px auto;
     font-size: 14px;
     display: none;
+}
+
+.error img{
+    width: 200px;
+    display: none;
+    margin: 50px auto;
 }
