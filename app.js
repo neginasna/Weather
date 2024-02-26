@@ -50,10 +50,10 @@ async function getWeather(city) {
 
 
         if (hours > 17 || hours <= 6 && data.weather[0].main == "Clouds") {
-            weatherIcone.src = `images/moon-cloud.png`;
+            weatherIcone.src = `images/cloudy-night.png`;
             description.innerText = 'Partly Cloudy';
         } else if (hours <= 17 && data.weather[0].main == "Clouds") {
-            weatherIcone.src = `images/clouds.png`;
+            weatherIcone.src = `images/cloudy-day.png`;
             description.innerText = 'Partly Cloudy';
         }
         
@@ -65,12 +65,20 @@ async function getWeather(city) {
             description.innerText = 'Clear';
         }
 
-        if (data.weather[0].main == "Rain") {
+        if (hours > 17 || hours <= 6 && data.weather[0].main == "Rain") {
             weatherIcone.src = `images/rainy-night.png`;
             description.innerText = 'Rainy';
         } else if (hours <= 17 && data.weather[0].main == "Rain"){
             weatherIcone.src = `images/rainy-day.png`;
             description.innerText = 'Rainy';
+        }
+
+        if (hours > 17 || hours <= 6 && data.weather[0].main == "Mist") {
+            weatherIcone.src = `images/mist-night.png`;
+            description.innerText = 'Mist';
+        } else if (hours <= 17 && data.weather[0].main == "Rain"){
+            weatherIcone.src = `images/mist-day.png`;
+            description.innerText = 'Mist';
         }
 
         if (data.weather[0].main == "Snow") {
@@ -80,10 +88,6 @@ async function getWeather(city) {
         else if (data.weather[0].main == "Drizzle") {
             weatherIcone.src = `images/drizzle.png`;
             description.innerText = 'Drizzle';
-        }
-        else if (data.weather[0].main == "Mist") {
-            weatherIcone.src = `images/fog-weather.png`;
-            description.innerText = 'Mist';
         }
 
 
