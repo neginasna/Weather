@@ -73,7 +73,7 @@ async function getWeather(city) {
         if (hours > 17 || hours <= 6 && data.weather[0].main == "Mist") {
             weatherIcone.src = `images/mist-night.png`;
             description.innerText = 'Mist';
-        } else if (hours <= 17 && data.weather[0].main == "Rain") {
+        } else if (hours <= 17 && data.weather[0].main == "Mist") {
             weatherIcone.src = `images/mist-day.png`;
             description.innerText = 'Mist';
         }
