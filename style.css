@@ -10,15 +10,15 @@ body {
     color: #fff;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-.align-center{
+.align-center {
     align-items: center;
 }
 
-.justify-center{
+.justify-center {
     justify-content: center;
 }
 
@@ -69,9 +69,9 @@ body {
 
 }
 
-.city-date-infos{
+.city-date-infos {
     margin-top: 30px;
-    flex-direction: column;  
+    flex-direction: column;
     gap: 5px;
 }
 
@@ -86,7 +86,7 @@ body {
     font-size: 12px;
 }
 
-.temp-infos{
+.temp-infos {
     margin-top: 10px;
     flex-direction: column;
 }
@@ -96,7 +96,7 @@ body {
 }
 
 .description span {
-   font-size: 14px;
+    font-size: 14px;
 }
 
 .weather .temp {
@@ -121,7 +121,7 @@ body {
 }
 
 .wrapp i {
-   font-size: 45px;
+    font-size: 45px;
 }
 
 .wrapp p {
@@ -145,7 +145,7 @@ body {
     display: none;
 }
 
-.error img{
+.error img {
     width: 200px;
     display: none;
     margin: 50px auto;

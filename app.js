@@ -8,6 +8,9 @@ const weatherIcone = document.querySelector(".weather-icone");
 const description = document.querySelector(".descrip");
 const date = document.querySelector(".date");
 const wrapp = document.querySelector(".wrapper");
+const error = document.querySelector(".error");
+const imgerror = document.querySelector(".img-error");
+const weather = document.querySelector(".weather");
 
 
 async function getWeather(city) {
@@ -15,16 +18,12 @@ async function getWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     let data = await response.json();
 
-    console.log(data)
-
     if (response.status == 404) {
-        const error = document.querySelector(".error");
-        const imgerror = document.querySelector(".img-error");
         error.style.display = "block"
         imgerror.style.display = "block"
 
-        document.querySelector(".weather").style.display = "none";
-        
+        weather.style.display = "none";
+
     } else {
 
         const location = document.querySelector(".city");
@@ -45,8 +44,6 @@ async function getWeather(city) {
         const currentDate = new Date();
         date.innerText = currentDate.toDateString()
         const hours = currentDate.getHours();
-        console.log(hours)
-
 
 
         if (hours > 17 || hours <= 6 && data.weather[0].main == "Clouds") {
@@ -56,8 +53,8 @@ async function getWeather(city) {
             weatherIcone.src = `images/cloudy-day.png`;
             description.innerText = 'Partly Cloudy';
         }
-        
-         if (hours > 17 || hours <= 6 && data.weather[0].main == "Clear") {
+
+        if (hours > 17 || hours <= 6 && data.weather[0].main == "Clear") {
             weatherIcone.src = `images/clear-weather.png`;
             description.innerText = 'Clear';
         } else if (hours <= 17 && data.weather[0].main == "Clear") {
@@ -68,7 +65,7 @@ async function getWeather(city) {
         if (hours > 17 || hours <= 6 && data.weather[0].main == "Rain") {
             weatherIcone.src = `images/rainy-night.png`;
             description.innerText = 'Rainy';
-        } else if (hours <= 17 && data.weather[0].main == "Rain"){
+        } else if (hours <= 17 && data.weather[0].main == "Rain") {
             weatherIcone.src = `images/rainy-day.png`;
             description.innerText = 'Rainy';
         }
@@ -76,7 +73,7 @@ async function getWeather(city) {
         if (hours > 17 || hours <= 6 && data.weather[0].main == "Mist") {
             weatherIcone.src = `images/mist-night.png`;
             description.innerText = 'Mist';
-        } else if (hours <= 17 && data.weather[0].main == "Rain"){
+        } else if (hours <= 17 && data.weather[0].main == "Rain") {
             weatherIcone.src = `images/mist-day.png`;
             description.innerText = 'Mist';
         }
@@ -91,16 +88,14 @@ async function getWeather(city) {
         }
 
 
-        if(hours > 17 || hours <= 6){
+        if (hours > 17 || hours <= 6) {
             wrapp.style.background = "rgb(76, 76, 116)";
         } else {
             wrapp.style.background = "rgba(135, 206, 250, 0.493)";
         }
 
-        const weather = document.querySelector(".weather");
         weather.style.display = "block";
-
-        document.querySelector(".error").style.display = "none";
+        error.style.display = "none";
     }
 
 }
