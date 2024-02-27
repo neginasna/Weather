@@ -105,20 +105,20 @@ async function getWeather(city) {
             }
         }
 
-            if (hours > 17 || hours <= 6) {
-                wrapp.style.background = "rgb(76, 76, 116)";
-            } else {
-                wrapp.style.background = "rgba(135, 206, 250, 0.493)";
-            }
-
-            weather.style.display = "block";
-            error.style.display = "none";
+        if (hours > 17 || hours <= 6) {
+            wrapp.style.background = "rgb(76, 76, 116)";
+        } else {
+            wrapp.style.background = "rgba(135, 206, 250, 0.493)";
         }
 
+        weather.style.display = "block";
+        error.style.display = "none";
     }
 
-    btn.addEventListener('click', () => {
+}
 
-        getWeather(inp.value);
+btn.addEventListener('click', () => {
 
-    })
+    getWeather(inp.value);
+
+})
