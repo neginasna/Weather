@@ -75,10 +75,8 @@ async function getWeather(city) {
                 weatherIcone.src = `images/drizzle-night.png`;
                 description.innerText = 'Drizzle';
             }
-        }
-
-
-        if (hours <= 17) {
+        } 
+        else if (hours <= 17 || hours > 6) {
             if (data.weather[0].main == "Clouds") {
                 weatherIcone.src = `images/cloudy-day.png`;
                 description.innerText = 'Partly Cloudy';
@@ -94,10 +92,6 @@ async function getWeather(city) {
             else if (data.weather[0].main == "Mist") {
                 weatherIcone.src = `images/mist-day.png`;
                 description.innerText = 'Mist';
-            }
-            else if (data.weather[0].main == "Haze") {
-                weatherIcone.src = `images/mist-day.png`;
-                description.innerText = 'Haze';
             }
             else if (data.weather[0].main == "Snow") {
                 weatherIcone.src = `images/snow.png`;
