@@ -93,6 +93,10 @@ async function getWeather(city) {
                 weatherIcone.src = `images/mist-day.png`;
                 description.innerText = 'Mist';
             }
+            else if (data.weather[0].main == "Haze") {
+                weatherIcone.src = `images/mist-day.png`;
+                description.innerText = 'Haze';
+            }
             else if (data.weather[0].main == "Snow") {
                 weatherIcone.src = `images/snow.png`;
                 description.innerText = 'Snowy';
